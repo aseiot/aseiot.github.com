@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[aSEioT's Blog]]></title>
+  <link href="http://2e10.com/cn/atom.xml" rel="self"/>
+  <link href="http://2e10.com/cn/"/>
+  <updated>2012-09-13T02:39:36+08:00</updated>
+  <id>http://2e10.com/cn/</id>
+  <author>
+    <name><![CDATA[aSEioT]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[how to config octopress in Win8]]></title>
+    <link href="http://2e10.com/cn/blog/2012/09/12/how-to-config-octopress-in-win8/"/>
+    <updated>2012-09-12T23:05:00+08:00</updated>
+    <id>http://2e10.com/cn/blog/2012/09/12/how-to-config-octopress-in-win8</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
