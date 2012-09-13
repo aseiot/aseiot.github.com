@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github | aSEioT's Blog]]></title>
   <link href="http://2e10.com/cn/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://2e10.com/cn/"/>
-  <updated>2012-09-13T22:59:16+08:00</updated>
+  <updated>2012-09-14T00:18:45+08:00</updated>
   <id>http://2e10.com/cn/</id>
   <author>
     <name><![CDATA[aSEioT]]></name>
@@ -20,11 +20,14 @@
     <id>http://2e10.com/cn/blog/2012/09/12/how-to-config-octopress-in-win8</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a>可以建立部署在github上的免费博客，而github是目前应用最广泛的开发平台，不但非常的稳定，而且国内访问速度也非常的理想，因此考虑在这里设一个长期的博客。关于具体的安装，<a href="http://octopress.org/docs/">Octopress</a>官网上已经有非常详细的介绍，这里将自己建立Octopress的过程做个简要记录：</p>
 
+<!-- more -->
+
+
 <h2>安装ruby环境</h2>
 
 <p> 下载Win8可用的Ruby安装包: <a href="http://rubyforge.org/frs/?group_id=167" title="RubyInstaller">RubyInstaller</a>，我们选择的安装版本是<code>rubyinstaller-1.9.3-p194.exe</code>，注意版本：<code>1.9.3</code></p>
 
-<p><img src="./cn/images/2012-09-12-how-to-config-octopress-in-win8/1.jpg" title="安装Ruby rubyinstaller" ></p>
+<p><img src="/images/2012-09-12-how-to-config-octopress-in-win8/1.jpg" title="安装Ruby rubyinstaller" ></p>
 
 <h5>这里注意安装的路径务必不要包含空格，否则后面使用时会出错，最后有个选择询问是否将Ruby的路径加入Path，需要勾选。</h5>
 
@@ -60,7 +63,7 @@ easy_install pygments
 <h2>安装Octopress</h2>
 
 <p>利用Git-extension，左上角的<code>Clone repository</code>链接打开下面的对话框，输入octopress的git地址和本地存储的位置，<code>Clone</code>即可：
-<img src="./cn/images/2012-09-12-how-to-config-octopress-in-win8/2.jpg" title="&#34;利用Git-extension安装Octopress&#34;" alt="&#34;利用Git-extension安装Octopress&#34;"></p>
+<img src="/images/2012-09-12-how-to-config-octopress-in-win8/2.jpg" title="&#34;利用Git-extension安装Octopress&#34;" alt="&#34;利用Git-extension安装Octopress&#34;"></p>
 
 <h2>安装Octopress支持库</h2>
 
@@ -72,7 +75,7 @@ gem sources -l
 </code></p>
 
 <blockquote><p>运行结果应该显示如下，表示更新成功
-<img src="./cn/images/2012-09-12-how-to-config-octopress-in-win8/3.jpg" title="&#34;gem source -l运行结果&#34;" alt="&#34;gem source -l运行结果&#34;">
+<img src="/images/2012-09-12-how-to-config-octopress-in-win8/3.jpg" title="&#34;gem source -l运行结果&#34;" alt="&#34;gem source -l运行结果&#34;">
 安装支持库
 <code>
 gem install bundler
