@@ -1,4 +1,4 @@
-aseiot
+aSEioT'S Website
 ======
 
-aSEioT blog site
+记录在日常学习中收集的点滴知识！
