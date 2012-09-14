@@ -4,7 +4,7 @@
   <title><![CDATA[aSEioT's Blog]]></title>
   <link href="http://2e10.com/cn/atom.xml" rel="self"/>
   <link href="http://2e10.com/cn/"/>
-  <updated>2012-09-15T01:10:09+08:00</updated>
+  <updated>2012-09-15T02:17:37+08:00</updated>
   <id>http://2e10.com/cn/</id>
   <author>
     <name><![CDATA[aSEioT]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[解决GitHub界面显示乱码]]></title>
+    <link href="http://2e10.com/cn/blog/2012/09/15/git-gibberish-characters/"/>
+    <updated>2012-09-15T01:38:00+08:00</updated>
+    <id>http://2e10.com/cn/blog/2012/09/15/git-gibberish-characters</id>
+    <content type="html"><![CDATA[<p>有好一阵子使用Firefox浏览GitHub时图标无法正常显示，充斥着无意义的乱码，而换用其它电脑或浏览器又显示正常。日前终于找到原因：</p>
+
+<blockquote><p>GitHub导航栏使用的图标并非图片，而是字符；因此图标显示异常是由于浏览器字体设置引起（所设置的字体不包含GitHub使用的字符，所以就乱码了）</p></blockquote>
+
+<!-- more -->
+
+
+<p>以下是修改前看到的乱码情形，虽不至于毁容，但足可影响读者心情。
+<img src="http://2e10.com/cn/images/2012-09-15-git-gibberish-characters/github.jpg" title="乱码时的GitHub网站" ></p>
+
+<p>由于个人在私下里较喜欢微软雅黑的字体，便将浏览器的字体统统换成了雅黑，一直以来相安无事，想不到却留有后患，下面以firefox的设置为例，说明我们在设置字体时可能没有留意的小细节。
+<img src="http://2e10.com/cn/images/2012-09-15-git-gibberish-characters/firefox-font-setting.jpg" title="firefox字体设置页面" ></p>
+
+<p>注意红框标注的部分，<b>我以前是没有勾选的</b>，目的是强制所有页面使用我设定的字体（症结在此）。</p>
+
+<p>找到症结，于是只需勾选该选项，重新刷新页面，GitHub终于恢复了往日俊逸！</p>
+
+<p>这里赞一下GitHub，竟然想到用字体代替图标</p>
+
+<h3>帅！</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[解决"WARN Could not determine content-lenth of response boby"错误]]></title>

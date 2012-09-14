@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>解决"WARN Could not determine content-lenth of response boby"错误 - aSEioT's Blog</title>
+  <title>解决GitHub界面显示乱码 - aSEioT's Blog</title>
   <meta name="author" content="aSEioT">
 
   
-  <meta name="description" content="在使用Rake preview时，观察到会出现下面错误 WARN Could not determine content-length of response body. Set content-length of the response or set Response#chunked = &hellip;">
+  <meta name="description" content="有好一阵子使用Firefox浏览GitHub时图标无法正常显示，充斥着无意义的乱码，而换用其它电脑或浏览器又显示正常。日前终于找到原因： GitHub导航栏使用的图标并非图片，而是字符；因此图标显示异常是由于浏览器字体设置引起（所设置的字体不包含GitHub使用的字符，所以就乱码了） &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">
+  <link rel="canonical" href="http://2e10.com/cn/blog/2012/09/15/git-gibberish-characters/">
   <link href="/cn/favicon.png" rel="icon">
   <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/cn/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">解决"WARN Could Not Determine Content-lenth of Response Boby"错误</h1>
+      <h1 class="entry-title">解决GitHub界面显示乱码</h1>
     
     
       <p class="meta">
@@ -83,40 +83,33 @@
   
 
 
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+<time datetime="2012-09-15T01:38:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在使用<code>Rake preview</code>时，观察到会出现下面错误</p>
+<div class="entry-content"><p>有好一阵子使用Firefox浏览GitHub时图标无法正常显示，充斥着无意义的乱码，而换用其它电脑或浏览器又显示正常。日前终于找到原因：</p>
 
-<blockquote><p>WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true</p></blockquote>
-
-<p>查询了一番，终于找到解决方案，记录一下！</p>
+<blockquote><p>GitHub导航栏使用的图标并非图片，而是字符；因此图标显示异常是由于浏览器字体设置引起（所设置的字体不包含GitHub使用的字符，所以就乱码了）</p></blockquote>
 
 <!-- more -->
 
 
-<h2>解决办法：</h2>
+<p>以下是修改前看到的乱码情形，虽不至于毁容，但足可影响读者心情。
+<img src="/cn/images/2012-09-15-git-gibberish-characters/github.jpg" title="乱码时的GitHub网站" ></p>
 
-<p>找到ruby的安装路径：</p>
+<p>由于个人在私下里较喜欢微软雅黑的字体，便将浏览器的字体统统换成了雅黑，一直以来相安无事，想不到却留有后患，下面以firefox的设置为例，说明我们在设置字体时可能没有留意的小细节。
+<img src="/cn/images/2012-09-15-git-gibberish-characters/firefox-font-setting.jpg" title="firefox字体设置页面" ></p>
 
-<pre><code>E:\PROGRAM\Ruby\lib\ruby\1.9.1\webrick\httpresponse.rb
-</code></pre>
+<p>注意红框标注的部分，<b>我以前是没有勾选的</b>，目的是强制所有页面使用我设定的字体（症结在此）。</p>
 
-<p>查找下面代码(在1.9.3p194里面是205行的位置)</p>
+<p>找到症结，于是只需勾选该选项，重新刷新页面，GitHub终于恢复了往日俊逸！</p>
 
-<pre><code>if chunked? || @header['content-length']
-</code></pre>
+<p>这里赞一下GitHub，竟然想到用字体代替图标</p>
 
-<p>替换为：</p>
-
-<pre><code>if chunked? || @header['content-length'] || @status == 304 || @status == 204
-</code></pre>
-
-<p>重新启动<code>rake preview</code>即可</p>
+<h3>帅！</h3>
 </div>
 
 
@@ -139,12 +132,12 @@
   
 
 
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+<time datetime="2012-09-15T01:38:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/cn/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/cn/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/cn/blog/categories/github/'>GitHub</a>
   
 </span>
 
@@ -165,10 +158,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/" title="Previous Post: 在Win8中部署Octopress">&laquo; 在Win8中部署Octopress</a>
+        <a class="basic-alignment left" href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/" title="Previous Post: 解决"WARN Could not determine content-lenth of response boby"错误">&laquo; 解决"WARN Could not determine content-lenth of response boby"错误</a>
       
-      
-        <a class="basic-alignment right" href="/cn/blog/2012/09/15/git-gibberish-characters/" title="Next Post: 解决GitHub界面显示乱码">解决GitHub界面显示乱码 &raquo;</a>
       
     </p>
   </footer>
@@ -223,8 +214,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
-        var disqus_url = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
+        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/15/git-gibberish-characters/';
+        var disqus_url = 'http://2e10.com/cn/blog/2012/09/15/git-gibberish-characters/';
         var disqus_script = 'embed.js';
       
     (function () {
