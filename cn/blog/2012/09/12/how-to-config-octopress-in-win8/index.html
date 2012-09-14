@@ -216,23 +216,31 @@
     </p>
     
       <!-- JiaThis Button BEGIN -->
-<script type="text/javascript" >
-	var jiathis_config={
-		summary:"",
-		showClose:false,
-		hideMore:true
-	}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r.gif&move=0" charset="utf-8"></script>
+<!--<script type="text/javascript" >-->
+	<!--var jiathis_config={-->
+		<!--summary:"",-->
+		<!--showClose:false,-->
+		<!--hideMore:true-->
+	<!--}-->
+<!--</script>-->
+<!--<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r.gif&move=0" charset="utf-8"></script>-->
 <!-- JiaThis Button END -->
 
     
     <p class="meta">
       
       
+        <a class="basic-alignment right" href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/" title="Next Post: 解决"WARN Could not determine content-lenth of response boby"错误">解决"WARN Could not determine content-lenth of response boby"错误 &raquo;</a>
+      
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -243,10 +251,43 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">解决"WARN Could not determine content-lenth of response boby"错误</a>
+      </li>
+    
+      <li class="post">
         <a href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/">在Win8中部署Octopress</a>
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/aseiot">@aseiot</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aseiot',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/cn/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -263,6 +304,22 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'aseiot';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/12/how-to-config-octopress-in-win8/';
+        var disqus_url = 'http://2e10.com/cn/blog/2012/09/12/how-to-config-octopress-in-win8/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

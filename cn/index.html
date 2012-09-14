@@ -9,7 +9,7 @@
   <meta name="author" content="aSEioT">
 
   
-  <meta name="description" content="Octopress可以建立部署在github上的免费博客，而github是目前应用最广泛的开发平台，不但非常的稳定，而且国内访问速度也非常的理想，因此考虑在这里设一个长期的博客。关于具体的安装，Octopress官网上已经有非常详细的介绍，这里将自己建立Octopress的过程做个简要记录： ">
+  <meta name="description" content="在使用Rake preview时，观察到会出现下面错误 WARN Could not determine content-length of response body. Set content-length of the response or set Response#chunked = &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +70,51 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">解决&#8221;WARN Could Not Determine Content-lenth of Response Boby&#8221;错误</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在使用<code>Rake preview</code>时，观察到会出现下面错误</p>
+
+<blockquote><p>WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true</p></blockquote>
+
+<p>查询了一番，终于找到解决方案，记录一下！</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/">在Win8中部署Octopress</a></h1>
     
     
@@ -119,10 +164,43 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">解决&#8221;WARN Could not determine content-lenth of response boby&#8221;错误</a>
+      </li>
+    
+      <li class="post">
         <a href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/">在Win8中部署Octopress</a>
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/aseiot">@aseiot</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aseiot',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/cn/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -138,6 +216,19 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'aseiot';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
