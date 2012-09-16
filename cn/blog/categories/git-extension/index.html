@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>解决"WARN Could not determine content-lenth of response boby"错误 - aSEioT's Blog</title>
+  <title>Category: Git-Extension - aSEioT's Blog</title>
   <meta name="author" content="aSEioT">
 
   
-  <meta name="description" content="在使用Rake preview时，观察到会出现下面错误 WARN Could not determine content-length of response body. Set content-length of the response or set Response#chunked = &hellip;">
+  <meta name="description" content="Category: Git-Extension">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">
+  <link rel="canonical" href="http://2e10.com/cnblog/categories/git-extension/">
   <link href="/cn/favicon.png" rel="icon">
   <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/cn/javascripts/modernizr-2.0.js"></script>
@@ -63,122 +63,36 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">解决"WARN Could Not Determine Content-lenth of Response Boby"错误</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Git-Extension</h1>
     
   </header>
-
-
-<div class="entry-content"><p>在使用<code>Rake preview</code>时，观察到会出现下面错误</p>
-
-<blockquote><p>WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true</p></blockquote>
-
-<p>查询了一番，终于找到解决方案，记录一下！</p>
-
-<!-- more -->
-
-
-<h2>解决办法：</h2>
-
-<p>找到ruby的安装路径：</p>
-
-<pre><code>E:\PROGRAM\Ruby\lib\ruby\1.9.1\webrick\httpresponse.rb
-</code></pre>
-
-<p>查找下面代码(在1.9.3p194里面是205行的位置)</p>
-
-<pre><code>if chunked? || @header['content-length']
-</code></pre>
-
-<p>替换为：</p>
-
-<pre><code>if chunked? || @header['content-length'] || @status == 304 || @status == 204
-</code></pre>
-
-<p>重新启动<code>rake preview</code>即可</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">aSEioT</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2012</h2>
 
-
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
-      
-
-<span class="categories">
+<article>
   
-    <a class='category' href='/cn/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/cn/blog/categories/ruby/'>Ruby</a>
-  
-</span>
+<h1><a href="/cn/blog/2012/09/16/force-delete-commited-git-head/">Git删除错误提交</a></h1>
+<time datetime="2012-09-16T22:51:00+08:00" pubdate><span class='month'>Sep</span> <span class='day'>16</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/cn/blog/categories/git-extension/'>Git-Extension</a>, <a class='category' href='/cn/blog/categories/github/'>GitHub</a></span>
+</footer>
 
 
-    </p>
-    
-      <!-- JiaThis Button BEGIN -->
-<!--<script type="text/javascript" >-->
-	<!--var jiathis_config={-->
-		<!--summary:"",-->
-		<!--showClose:false,-->
-		<!--hideMore:true-->
-	<!--}-->
-<!--</script>-->
-<!--<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?btn=r.gif&move=0" charset="utf-8"></script>-->
-<!-- JiaThis Button END -->
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/" title="Previous Post: 在Win8中部署Octopress">&laquo; 在Win8中部署Octopress</a>
-      
-      
-        <a class="basic-alignment right" href="/cn/blog/2012/09/15/git-gibberish-characters/" title="Next Post: 解决GitHub界面显示乱码">解决GitHub界面显示乱码 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+
+  
+</article>
 
 </div>
 
@@ -226,10 +140,7 @@
       var disqus_shortname = 'aseiot';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
-        var disqus_url = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

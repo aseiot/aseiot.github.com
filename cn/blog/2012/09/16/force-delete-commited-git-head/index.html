@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>解决"WARN Could not determine content-lenth of response boby"错误 - aSEioT's Blog</title>
+  <title>Git删除错误提交 - aSEioT's Blog</title>
   <meta name="author" content="aSEioT">
 
   
-  <meta name="description" content="在使用Rake preview时，观察到会出现下面错误 WARN Could not determine content-length of response body. Set content-length of the response or set Response#chunked = &hellip;">
+  <meta name="description" content="在使用git时，免不了偶尔会提交错误，如果是本地，我们可以直接reset即可，但有时已经提交到远端服务器如GitHub，那么怎么去强制重置此类错误提交呢？ 方法: 首先本地hard reset: git命令： git reset --hard &lt;commit_id&gt; Git- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/">
+  <link rel="canonical" href="http://2e10.com/cn/blog/2012/09/16/force-delete-commited-git-head/">
   <link href="/cn/favicon.png" rel="icon">
   <link href="/cn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/cn/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">解决"WARN Could Not Determine Content-lenth of Response Boby"错误</h1>
+      <h1 class="entry-title">Git删除错误提交</h1>
     
     
       <p class="meta">
@@ -83,40 +83,51 @@
   
 
 
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+<time datetime="2012-09-16T22:51:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在使用<code>Rake preview</code>时，观察到会出现下面错误</p>
-
-<blockquote><p>WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true</p></blockquote>
-
-<p>查询了一番，终于找到解决方案，记录一下！</p>
+<div class="entry-content"><p>在使用git时，免不了偶尔会提交错误，如果是本地，我们可以直接reset即可，但有时已经提交到远端服务器如GitHub，那么怎么去强制重置此类错误提交呢？</p>
 
 <!-- more -->
 
 
-<h2>解决办法：</h2>
+<h2>方法:</h2>
 
-<p>找到ruby的安装路径：</p>
+<ul>
+<li><strong>首先本地hard reset:</strong></li>
+</ul>
 
-<pre><code>E:\PROGRAM\Ruby\lib\ruby\1.9.1\webrick\httpresponse.rb
+
+<p>git命令：</p>
+
+<pre><code>git reset --hard &lt;commit_id&gt;
 </code></pre>
 
-<p>查找下面代码(在1.9.3p194里面是205行的位置)</p>
+<p>Git-Extension操作：</p>
 
-<pre><code>if chunked? || @header['content-length']
+<p>右键选择需要重置的提交，然后选择<code>reset current branch to here</code>，弹出窗口中重置类型选择<code>hard reset</code>：
+<img src="/cn/images/2012-09-16-force-delete-commited-git-head/hard-reset.jpg" title="hard reset" ></p>
+
+<ul>
+<li><strong>然后强制提交到远端:</strong></li>
+</ul>
+
+
+<p>git命令：</p>
+
+<pre><code>git push origin HEAD --force
 </code></pre>
 
-<p>替换为：</p>
+<p>Git-Extension操作：</p>
 
-<pre><code>if chunked? || @header['content-length'] || @status == 304 || @status == 204
-</code></pre>
+<p>选择commands菜单下push或使用<code>CTRL+UP</code>快捷键调出push窗口，此时注意点击<code>Show options</code>，然后勾选<code>Force Push</code>，提交即可。
+<img src="/cn/images/2012-09-16-force-delete-commited-git-head/force-push.jpg" title="强制提交至远端" ></p>
 
-<p>重新启动<code>rake preview</code>即可</p>
+<p>OK! 搞定！</p>
 </div>
 
 
@@ -139,12 +150,12 @@
   
 
 
-<time datetime="2012-09-15T00:05:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+<time datetime="2012-09-16T22:51:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/cn/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/cn/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/cn/blog/categories/git-extension/'>Git-Extension</a>, <a class='category' href='/cn/blog/categories/github/'>GitHub</a>
   
 </span>
 
@@ -165,10 +176,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/cn/blog/2012/09/12/how-to-config-octopress-in-win8/" title="Previous Post: 在Win8中部署Octopress">&laquo; 在Win8中部署Octopress</a>
+        <a class="basic-alignment left" href="/cn/blog/2012/09/15/git-gibberish-characters/" title="Previous Post: 解决GitHub界面显示乱码">&laquo; 解决GitHub界面显示乱码</a>
       
-      
-        <a class="basic-alignment right" href="/cn/blog/2012/09/15/git-gibberish-characters/" title="Next Post: 解决GitHub界面显示乱码">解决GitHub界面显示乱码 &raquo;</a>
       
     </p>
   </footer>
@@ -227,8 +236,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
-        var disqus_url = 'http://2e10.com/cn/blog/2012/09/15/warn-could-not-determine-content-lenth-of-response-boby/';
+        var disqus_identifier = 'http://2e10.com/cn/blog/2012/09/16/force-delete-commited-git-head/';
+        var disqus_url = 'http://2e10.com/cn/blog/2012/09/16/force-delete-commited-git-head/';
         var disqus_script = 'embed.js';
       
     (function () {

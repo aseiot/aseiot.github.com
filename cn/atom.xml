@@ -4,7 +4,7 @@
   <title><![CDATA[aSEioT's Blog]]></title>
   <link href="http://2e10.com/cn/atom.xml" rel="self"/>
   <link href="http://2e10.com/cn/"/>
-  <updated>2012-09-15T02:17:37+08:00</updated>
+  <updated>2012-09-17T00:05:02+08:00</updated>
   <id>http://2e10.com/cn/</id>
   <author>
     <name><![CDATA[aSEioT]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git删除错误提交]]></title>
+    <link href="http://2e10.com/cn/blog/2012/09/16/force-delete-commited-git-head/"/>
+    <updated>2012-09-16T22:51:00+08:00</updated>
+    <id>http://2e10.com/cn/blog/2012/09/16/force-delete-commited-git-head</id>
+    <content type="html"><![CDATA[<p>在使用git时，免不了偶尔会提交错误，如果是本地，我们可以直接reset即可，但有时已经提交到远端服务器如GitHub，那么怎么去强制重置此类错误提交呢？</p>
+
+<!-- more -->
+
+
+<h2>方法:</h2>
+
+<ul>
+<li><strong>首先本地hard reset:</strong></li>
+</ul>
+
+
+<p>git命令：</p>
+
+<pre><code>git reset --hard &lt;commit_id&gt;
+</code></pre>
+
+<p>Git-Extension操作：</p>
+
+<p>右键选择需要重置的提交，然后选择<code>reset current branch to here</code>，弹出窗口中重置类型选择<code>hard reset</code>：
+<img src="http://2e10.com/cn/images/2012-09-16-force-delete-commited-git-head/hard-reset.jpg" title="hard reset" ></p>
+
+<ul>
+<li><strong>然后强制提交到远端:</strong></li>
+</ul>
+
+
+<p>git命令：</p>
+
+<pre><code>git push origin HEAD --force
+</code></pre>
+
+<p>Git-Extension操作：</p>
+
+<p>选择commands菜单下push或使用<code>CTRL+UP</code>快捷键调出push窗口，此时注意点击<code>Show options</code>，然后勾选<code>Force Push</code>，提交即可。
+<img src="http://2e10.com/cn/images/2012-09-16-force-delete-commited-git-head/force-push.jpg" title="强制提交至远端" ></p>
+
+<p>OK! 搞定！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[解决GitHub界面显示乱码]]></title>
@@ -88,11 +134,12 @@
 
 <h2>安装ruby环境</h2>
 
-<p> 下载Win8可用的Ruby安装包: <a href="http://rubyforge.org/frs/?group_id=167" title="RubyInstaller">RubyInstaller</a>，我们选择的安装版本是<code>rubyinstaller-1.9.3-p194.exe</code>，注意版本：<code>1.9.3</code></p>
+<p> 下载Win8可用的Ruby安装包: <a href="http://rubyforge.org/frs/?group_id=167" title="RubyInstaller">RubyInstaller</a>，我们选择的安装版本是<code>rubyinstaller-1.9.3-p194.exe</code></p>
 
-<p><img src="http://2e10.com/cn/images/2012-09-12-how-to-config-octopress-in-win8/1.jpg" title="安装Ruby rubyinstaller" ></p>
+<p> <strong>注意使用Octopress要求的版本：这里是1.9.3</strong></p>
 
-<h5>这里注意安装的路径务必不要包含空格，否则后面使用时会出错，最后有个选择询问是否将Ruby的路径加入Path，需要勾选。</h5>
+<p><img src="http://2e10.com/cn/images/2012-09-12-how-to-config-octopress-in-win8/1.jpg" title="安装Ruby rubyinstaller" >
+<strong>这里注意安装的路径务必不要包含空格，否则后面使用时会出错，最后有个选择询问是否将Ruby的路径加入Path，需要勾选。</strong></p>
 
 <h2>安装gem编译环境</h2>
 
