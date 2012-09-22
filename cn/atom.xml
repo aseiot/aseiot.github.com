@@ -4,7 +4,7 @@
   <title><![CDATA[aSEioT's Blog]]></title>
   <link href="http://2e10.com/cn/atom.xml" rel="self"/>
   <link href="http://2e10.com/cn/"/>
-  <updated>2012-09-17T00:05:02+08:00</updated>
+  <updated>2012-09-23T03:17:36+08:00</updated>
   <id>http://2e10.com/cn/</id>
   <author>
     <name><![CDATA[aSEioT]]></name>
@@ -12,6 +12,99 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[激活或删除SkyDrive Pro菜单(Office 2013附带)]]></title>
+    <link href="http://2e10.com/cn/blog/2012/09/23/enable-skydrive-pro/"/>
+    <updated>2012-09-23T02:19:00+08:00</updated>
+    <id>http://2e10.com/cn/blog/2012/09/23/enable-skydrive-pro</id>
+    <content type="html"><![CDATA[<p>安装微软Office 2013预览版后在文件和文件夹的右键菜单会出现&#8221;SkyDrive Pro&#8221;这个菜单选项，但是为灰色，无法点击。这里介绍一下如何激活或删除该菜单。</p>
+
+<!-- more -->
+
+
+<h2>手工激活</h2>
+
+<ul>
+<li>首先需要打开注册表并定位于<code>HKEY_CLASSES_ROOT\AllFilesystemObjects\shell\SPFS.ContextMenu</code>其中你会看到&#8221;CommandStateHandler&#8221;</li>
+</ul>
+
+
+<p><img src="http://2e10.com/cn/images/2012-09-23-enable-skydrive-pro/right-menu.jpg" title="右键'SkyDrive Pro'菜单对应的注册表键值" ></p>
+
+<p>其默认键值为<code>{573FFD05-2805-47C2-BCE0-5F19512BEB8D}</code>双击，将键值替换为空值。这样就激活了右键的<code>SkyDrive Pro</code>，但子菜单此时还是灰色的。</p>
+
+<ul>
+<li>再次定位于<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell</code>你会看到：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SPFS.BrowseOnSharePoint
+</span><span class='line'>SPFS.CopyLink
+</span><span class='line'>SPFS.ResolveError
+</span><span class='line'>SPFS.Share</span></code></pre></td></tr></table></div></figure>
+
+
+<p>四个子键，他们实际上分别对应了四个子菜单。</p>
+
+<p><img src="http://2e10.com/cn/images/2012-09-23-enable-skydrive-pro/sub-menu.jpg" title="右键'SkyDrive Pro'子菜单对应的注册表键值" ></p>
+
+<p>逐一进入子键，你会发现其中也存在<code>CommandStateHandler</code>。此时和前面一样将其替换为空值即可激活相应的子菜单。</p>
+
+<h2>导入注册表激活</h2>
+
+<p>原理和上面是相同的，将下面设置好的内容另存为后缀为reg的文件，双击导入即可。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Windows Registry Editor Version 5.00
+</span><span class='line'>
+</span><span class='line'>[HKEY_CLASSES_ROOT\AllFilesystemObjects\shell\SPFS.ContextMenu]
+</span><span class='line'>"CommandStateHandler"=""
+</span><span class='line'>
+</span><span class='line'>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\SPFS.BrowseOnSharePoint]
+</span><span class='line'>"CommandStateHandler"=""
+</span><span class='line'>
+</span><span class='line'>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\SPFS.CopyLink]
+</span><span class='line'>@="&Copy link"
+</span><span class='line'>"CommandStateHandler"=""
+</span><span class='line'>
+</span><span class='line'>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\SPFS.ResolveError]
+</span><span class='line'>"CommandStateHandler"=""
+</span><span class='line'>
+</span><span class='line'>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\SPFS.Share]
+</span><span class='line'>@="&Share..."
+</span><span class='line'>"CommandStateHandler"=""</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下是激活后的图片
+<img src="http://2e10.com/cn/images/2012-09-23-enable-skydrive-pro/actived.jpg" title="右键'SkyDrive Pro'成功激活" ></p>
+
+<h2>删除（删除前最好备份一下，以防日后恢复）</h2>
+
+<p>同样是定位于注册表<code>HKEY_CLASSES_ROOT\AllFilesystemObjects\shell\SPFS.ContextMenu</code>，将整个<code>SPFS.ContextMenu</code>删除即可。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git删除错误提交]]></title>
