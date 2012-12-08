@@ -1997,7 +1997,8 @@ body>footer {
 }
 
 body>footer a {
-	color: #6b6b6b
+	color: #6b6b6b;
+	text-decoration: none;
 }
 
 body>footer a:visited {
