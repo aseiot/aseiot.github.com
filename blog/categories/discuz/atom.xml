@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Discuz | aSEioT's Blog]]></title>
+  <link href="http://2e10.com/blog/categories/discuz/atom.xml" rel="self"/>
+  <link href="http://2e10.com/"/>
+  <updated>2013-03-11T00:03:44+08:00</updated>
+  <id>http://2e10.com/</id>
+  <author>
+    <name><![CDATA[aSEioT]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[更换Discuz的默认logo]]></title>
+    <link href="http://2e10.com/blog/20130310-how-to-change-the-logo-of-discuz/"/>
+    <updated>2013-03-10T23:05:00+08:00</updated>
+    <id>http://2e10.com/blog/how-to-change-the-logo-of-discuz</id>
+    <content type="html"><![CDATA[<p>个性化的logo是建立一个网站最早需要做的事情之一，如果你选择了Discuz建站，那么该如何替换Discuz的默认logo呢？熟悉Discuz的朋友都知道，实际上Discuz的默认图片存在于<code>~/static/image/common/</code>这个目录中，所以答案也就非常简单了！</p>
+
+<!-- more -->
+
+
+<h2>替换页头左侧的主logo</h2>
+
+<p>logo图片的路径为
+<code>
+ ~/static/image/common/logo.png
+</code>
+将其替换成你自己的logo就可以了，注意logo的尺寸最好是相差不大的，否则可能会与主题难以搭配</p>
+
+<h2>替换搜索页面的logo</h2>
+
+<p>即使换了前面的logo，你会发现在搜索页面还是会显示默认的Discuz的搜索logo，这里顺道一起换了。
+<code>
+ ~/static/image/common/logo_sc.png
+ ~/static/image/common/logo_sc_s.png
+</code>
+以上分别是两种大小尺寸的搜索页面logo，和前面一样换成你自己的就可以了。</p>
+]]></content>
+  </entry>
+  
+</feed>
