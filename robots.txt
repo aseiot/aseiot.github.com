@@ -1,7 +1,4 @@
----
-layout: nil
----
 User-agent: *
-Disallow:
+Disallow: 
 
-Sitemap: {{ site.url }}/cn/sitemap.xml
+Sitemap: http://2e10.com/sitemap.xml 

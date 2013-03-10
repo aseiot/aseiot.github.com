@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>解决GitHub界面显示乱码 - aSEioT's Blog</title>
+  <meta name="author" content="aSEioT">
+
+  
+  <meta name="description" content="有好一阵子使用Firefox浏览GitHub时图标无法正常显示，充斥着无意义的乱码，而换用其它电脑或浏览器又显示正常。日前终于找到原因： GitHub导航栏使用的图标并非图片，而是字符；因此图标显示异常是由于浏览器字体设置引起（所设置的字体不包含GitHub使用的字符，所以就乱码了） &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://2e10.com/blog/20120915-git-gibberish-characters">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="aSEioT's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?59659cf4aa8411ed55e45aba605109af";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">aSEioT's Blog</a></h1>
+  
+    <h2>Pick up...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:2e10.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">解决GitHub界面显示乱码</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-15T01:38:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>有好一阵子使用Firefox浏览GitHub时图标无法正常显示，充斥着无意义的乱码，而换用其它电脑或浏览器又显示正常。日前终于找到原因：</p>
+
+<blockquote><p>GitHub导航栏使用的图标并非图片，而是字符；因此图标显示异常是由于浏览器字体设置引起（所设置的字体不包含GitHub使用的字符，所以就乱码了）</p></blockquote>
+
+<!-- more -->
+
+
+<p>以下是修改前看到的乱码情形，虽不至于毁容，但足可影响读者心情。
+<img src="/images/2012-09-15-git-gibberish-characters/github.jpg" title="乱码时的GitHub网站" ></p>
+
+<p>由于个人在私下里较喜欢微软雅黑的字体，便将浏览器的字体统统换成了雅黑，一直以来相安无事，想不到却留有后患，下面以firefox的设置为例，说明我们在设置字体时可能没有留意的小细节。
+<img src="/images/2012-09-15-git-gibberish-characters/firefox-font-setting.jpg" title="firefox字体设置页面" ></p>
+
+<p>注意红框标注的部分，<b>我以前是没有勾选的</b>，目的是强制所有页面使用我设定的字体（症结在此）。</p>
+
+<p>找到症结，于是只需勾选该选项，重新刷新页面，GitHub终于恢复了往日俊逸！</p>
+
+<p>这里赞一下GitHub，竟然想到用字体代替图标</p>
+
+<h3>帅！</h3>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">aSEioT</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-15T01:38:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/github/'>GitHub</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20120915-warn-could-not-determine-content-lenth-of-response-boby/" title="Previous Post: 解决"WARN Could not determine content-lenth of response boby"错误">&laquo; 解决"WARN Could not determine content-lenth of response boby"错误</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/20120916-force-delete-commited-git-head/" title="Next Post: Git删除错误提交">Git删除错误提交 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20120923-enable-skydrive-pro/">激活或删除SkyDrive Pro菜单(Office 2013附带)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20120916-force-delete-commited-git-head/">Git删除错误提交</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20120915-git-gibberish-characters/">解决GitHub界面显示乱码</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20120915-warn-could-not-determine-content-lenth-of-response-boby/">解决"WARN Could not determine content-lenth of response boby"错误</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20120912-how-to-config-octopress-in-win8/">在Win8中部署Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+	Links: <span class="credit"><a href="http://lovelyresearcher.com">LovelyResearcher</a></span>
+</p><p>
+	Copyright &copy; 2013 - aSEioT -
+	<span class="credit">Powered by Octopress</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aseiot';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://2e10.com/blog/20120915-git-gibberish-characters/';
+        var disqus_url = 'http://2e10.com/blog/20120915-git-gibberish-characters/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

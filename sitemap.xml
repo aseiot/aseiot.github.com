@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://2e10.com/blog/20120912-how-to-config-octopress-in-win8/</loc>
+        <lastmod>2013-03-10T21:40:46+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://2e10.com/blog/20120915-warn-could-not-determine-content-lenth-of-response-boby/
+        </loc>
+        <lastmod>2013-03-10T21:08:59+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/blog/20120915-git-gibberish-characters/</loc>
+        <lastmod>2013-03-10T21:08:59+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/blog/20120916-force-delete-commited-git-head/</loc>
+        <lastmod>2013-03-10T21:08:59+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/blog/20120923-enable-skydrive-pro/</loc>
+        <lastmod>2013-03-10T21:08:59+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/blog/archives/</loc>
+        <lastmod>2013-03-10T21:40:46+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/</loc>
+        <lastmod>2013-03-10T21:40:46+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://2e10.com/robots.txt</loc>
+        <lastmod>2013-03-10T21:08:59+08:00</lastmod>
+    </url>
+</urlset>
